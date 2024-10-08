@@ -1,0 +1,192 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte padrão */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+}
+
+/* Container do aplicativo */
+.app-container {
+    display: flex;
+    flex-direction: column; /* Coluna para layout responsivo */
+    align-items: center; /* Centralizar itens */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Simulação do celular */
+.phone {
+    width: 100%; /* 100% da largura no celular */
+    max-width: 340px; /* Largura máxima */
+    height: 600px;
+    border: 12px solid #1E8449; /* Borda mais larga */
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo da câmera */
+.camera-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco */
+    position: relative;
+    overflow: hidden; /* Para esconder bordas do vídeo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Vídeo da câmera */
+#video {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px; /* Bordas arredondadas */
+}
+
+/* Botão de captura */
+#capture {
+    background-color: #fff; /* Botão branco */
+    color: #1E8449;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    position: absolute;
+    bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#capture:hover {
+    background-color: #1E8449; /* Altera a cor ao passar o mouse */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Container da imagem capturada */
+.captured-container {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease; /* Transição suave */
+}
+
+.captured-container h3 {
+    margin: 10px 0;
+}
+
+.captured-container img {
+    width: 90%;
+    height: auto;
+    border: 5px solid #1E8449;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Botão de salvar imagem */
+.save-button {
+    background-color: #1E8449;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.save-button:hover {
+    background-color: #FFD700;
+    color: #1E8449;
+    transform: scale(1.05);
+}
+
+/* Estilo da informação */
+.info {
+    max-width: 400px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.info h2 {
+    color: #1E8449;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #555;
+}
+
+/* Botão de voltar */
+.back-button {
+    background-color: #1E8449; /* Cor base */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px; /* Mais arredondado */
+    cursor: pointer;
+    position: fixed; /* Fixo na parte inferior */
+    bottom: 30px; /* Distância da parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    background-color: #66BB6A; /* Verde mais claro */
+    color: #fff;
+    transform: translateX(-50%) scale(1.1); /* Efeito de aproximação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumenta a sombra */
+}
+
+/* Animação de FadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Efeito de fade-in nos elementos */
+.fade-in {
+    animation: fadeIn 1s ease forwards; /* Fade-in com animação */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .phone {
+        max-width: 90%; /* Mais largura em telas menores */
+    }
+
+    .info {
+        max-width: 100%; /* Flexibilidade em telas pequenas */
+        padding: 0 10px; /* Padding extra para mobile */
+    }
+
+    .back-button {
+        bottom: 20px; /* Ajuste na posição inferior */
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCam - Aplicativo</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="appstyles.css">
+</head>
+<body>
+    <div class="app-container fade-in">
+        <div class="phone fade-in">
+            <div class="camera-container fade-in">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <button id="capture">Capturar</button>
+            </div>
+            <div class="captured-container" id="captured-container">
+                <h3>Imagem Capturada</h3>
+                <img id="captured-image" src="" alt="Imagem Capturada" />
+                <button class="save-button">Salvar Imagem</button>
+            </div>
+        </div>
+        <div class="info fade-in">
+            <h2>Sobre o <b>ECO CAM</b></h2>
+            <p>O Eco Cam é um aplicativo inovador que permite registrar e catalogar espécies em seu ambiente natural. Capture fotos e adicione informações sobre a flora e fauna que encontra. Contribua para a preservação da biodiversidade!</p>
+        </div>
+    </div>
+    <button class="back-button" onclick="window.location.href='index.html'">Voltar ao Site Principal</button>
+    <script src="app.js"></script>
+</body>
+</html>
